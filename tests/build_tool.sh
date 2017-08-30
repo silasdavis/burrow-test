@@ -45,7 +45,7 @@ if [[ ${tag} =~ ${VERSION_REGEX} ]] ; then
 else
     date=$(date +"%Y%m%d")
     commit=$(git rev-parse --short HEAD)
-    version="$version-dev-$date-$commit"
+    version="$version-dev-TEST-$date-$commit"
     echo "Building non-release version $version..."
 fi
 

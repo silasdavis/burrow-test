@@ -117,8 +117,12 @@ build_race_client:
 
 # test burrow
 .PHONY: test
-test: build
-	@go test ${PACKAGES_NOVENDOR} -tags integration
+test:
+	@go test ${PACKAGES_NOVENDOR}
+
+.PHONY: test_integration
+test_integration:
+	@go test ./rpc/tendermint/test -tags integration
 
 # test burrow with checks for race conditions
 .PHONY: test_race
